@@ -1,6 +1,6 @@
 # @bconnorwhite/json-types
-![dependencies](https://img.shields.io/david/write-json-safe)
-![typescript](https://img.shields.io/github/languages/top/bconnorwhite/write-json-safe)
+![dependencies](https://img.shields.io/david/bconnorwhite/json-types)
+![typescript](https://img.shields.io/github/languages/top/bconnorwhite/json-types)
 ![npm](https://img.shields.io/npm/v/@bconnorwhite/json-types)
 
 Type checking for json objects
