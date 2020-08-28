@@ -3,7 +3,10 @@
   "version": "1.0.1",
   "description": "Type checking for json objects",
   "main": "./build/index.js",
-  "repository": "git+https://github.com/bconnorwhite/write-json-safe.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bconnorwhite/json-types.git"
+  },
   "author": "Connor White",
   "license": "MIT",
   "keywords": [
