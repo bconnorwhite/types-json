@@ -1,0 +1,30 @@
+{
+  "name": "@bconnorwhite/json-types",
+  "version": "1.0.0",
+  "description": "Type checking for json objects",
+  "main": "./build/index.js",
+  "repository": "git+https://github.com/bconnorwhite/write-json-safe.git",
+  "author": "Connor White",
+  "license": "MIT",
+  "keywords": [
+    "json",
+    "object",
+    "typescript",
+    "types",
+    "type",
+    "checking"
+  ],
+  "scripts": {
+    "build": "babel ./src --out-dir ./build --config-file ./babel.config.json --extensions .ts --delete-dir-on-start && tsc --project ./tsconfig.json",
+    "prepublishOnly": "yarn build"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.4",
+    "@babel/plugin-transform-runtime": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-typescript": "^7.10.4",
+    "@types/node": "^14.6.1",
+    "typescript": "^4.0.2"
+  }
+}
