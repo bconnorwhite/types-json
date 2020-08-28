@@ -1,6 +1,6 @@
 {
   "name": "@bconnorwhite/json-types",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Type checking for json objects",
   "main": "./build/index.js",
   "repository": "git+https://github.com/bconnorwhite/write-json-safe.git",
