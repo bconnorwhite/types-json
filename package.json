@@ -1,6 +1,6 @@
 {
   "name": "@bconnorwhite/json-types",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Type checking for json objects",
   "main": "./build/index.js",
   "homepage": "https://connorwhite.org/github/json-types",
