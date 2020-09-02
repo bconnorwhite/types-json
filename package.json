@@ -3,11 +3,12 @@
   "version": "1.0.2",
   "description": "Type checking for json objects",
   "main": "./build/index.js",
+  "homepage": "https://connorwhite.org/github/json-types",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bconnorwhite/json-types.git"
   },
-  "author": "Connor White",
+  "author": "Connor White <connor.bcw@gmail.com>",
   "license": "MIT",
   "keywords": [
     "json",
@@ -18,16 +19,11 @@
     "checking"
   ],
   "scripts": {
-    "build": "babel ./src --out-dir ./build --config-file ./babel.config.json --extensions .ts --delete-dir-on-start && tsc --project ./tsconfig.json",
+    "build": "bob build",
     "prepublishOnly": "yarn build"
   },
   "devDependencies": {
-    "@babel/cli": "^7.10.5",
-    "@babel/core": "^7.11.4",
-    "@babel/plugin-transform-runtime": "^7.11.0",
-    "@babel/preset-env": "^7.11.0",
-    "@babel/preset-typescript": "^7.10.4",
-    "@types/node": "^14.6.1",
-    "typescript": "^4.0.2"
+    "@bconnorwhite/bob": "^1.9.6",
+    "@types/node": "^14.6.1"
   }
 }
