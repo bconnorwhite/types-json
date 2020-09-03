@@ -13,6 +13,8 @@
   "keywords": [
     "json",
     "object",
+    "value",
+    "array",
     "typescript",
     "types",
     "type",
