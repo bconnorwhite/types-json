@@ -23,7 +23,7 @@
   "scripts": {
     "build": "bob build",
     "prepublishOnly": "yarn build",
-    "postpublish": "git push"
+    "postversion": "git push"
   },
   "devDependencies": {
     "@bconnorwhite/bob": "^1.9.7",
