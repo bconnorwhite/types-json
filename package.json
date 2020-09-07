@@ -1,15 +1,18 @@
 {
-  "name": "@bconnorwhite/json-types",
+  "name": "type-json",
   "version": "1.0.5",
   "description": "Type checking for json objects",
-  "main": "./build/index.js",
-  "homepage": "https://connorwhite.org/github/json-types",
+  "license": "MIT",
+  "author": {
+    "name": "Connor White",
+    "email": "connor.bcw@gmail.com",
+    "url": "https://connorwhite.org"
+  },
+  "homepage": "https://connorwhite.org/github/type-json",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bconnorwhite/json-types.git"
+    "url": "git+https://github.com/bconnorwhite/type-json.git"
   },
-  "author": "Connor White <connor.bcw@gmail.com>",
-  "license": "MIT",
   "keywords": [
     "json",
     "object",
@@ -18,17 +21,22 @@
     "typescript",
     "types",
     "type",
-    "checking"
+    "checking",
+    "guard",
+    "guards"
+  ],
   "files": [
     "build"
   ],
+  "main": "./build/index.js",
   "scripts": {
     "build": "bob build",
+    "postversion": "git push",
     "prepublishOnly": "yarn build",
-    "postversion": "git push"
+    "test": "jest"
   },
   "devDependencies": {
-    "@bconnorwhite/bob": "^1.9.7",
-    "@types/node": "^14.6.1"
+    "@bconnorwhite/bob": "^2.0.1",
+    "jest": "^26.4.2"
   }
 }
