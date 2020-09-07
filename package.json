@@ -19,6 +19,8 @@
     "types",
     "type",
     "checking"
+  "files": [
+    "build"
   ],
   "scripts": {
     "build": "bob build",
