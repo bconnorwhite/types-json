@@ -1,7 +1,7 @@
 {
   "name": "types-json",
   "version": "1.0.6",
-  "description": "Type checking for json objects",
+  "description": "Type checking for JSON objects",
   "license": "MIT",
   "author": {
     "name": "Connor White",
