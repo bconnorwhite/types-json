@@ -1,6 +1,6 @@
 {
-  "name": "type-json",
-  "version": "1.0.5",
+  "name": "types-json",
+  "version": "1.0.6",
   "description": "Type checking for json objects",
   "license": "MIT",
   "author": {
@@ -8,10 +8,10 @@
     "email": "connor.bcw@gmail.com",
     "url": "https://connorwhite.org"
   },
-  "homepage": "https://connorwhite.org/github/type-json",
+  "homepage": "https://connorwhite.org/github/types-json",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bconnorwhite/type-json.git"
+    "url": "git+https://github.com/bconnorwhite/types-json.git"
   },
   "keywords": [
     "json",
