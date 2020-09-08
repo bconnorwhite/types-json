@@ -16,6 +16,8 @@
 
 > Type checking for json objects
 
+Derived from [type-fest](https://www.npmjs.com/package/type-fest) with a focus on JSON types.
+
 ## Installation
 
 ```bash
@@ -54,3 +56,10 @@ interface JSONArray extends Array<JSONValue> {};
 <h2>License <img align="right" alt="license" src="https://img.shields.io/npm/l/types-json.svg"></h2>
 
 [MIT](https://mit-license.org/)
+
+<br />
+
+## Related Packages
+
+- [types-pkg-json](https://www.npmjs.com/package/types-pkg-json): Type checking for package.json
+- [types-tsconfig](https://www.npmjs.com/package/types-tsconfig): Type checking for tsconfig.json
