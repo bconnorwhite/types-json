@@ -32,9 +32,32 @@ npm install types-json
 
 ### Types
 ```ts
-import { isJSONObject, JSONObject, JSONValue, JSONArray } from "types-json";
+import {
+  isJSONObject,
+  isJSONArray,
+  isString,
+  isNumber,
+  isBoolean,
+  isNull,
+  isUndefined,
+  JSONObject,
+  JSONValue,
+  JSONArray
+} from "types-json";
 
-isJSONObject(object?: JSONValue): boolean;
+function isJSONObject(object?: JSONValue): boolean;
+
+function isJSONArray(object?: JSONValue): boolean;
+
+function isString(object?: JSONValue): boolean;
+
+function isNumber(object?: JSONValue): boolean;
+
+function isBoolean(object?: JSONValue): boolean;
+
+function isNull(object?: JSONValue): boolean;
+
+function isUndefined(object?: JSONValue): boolean;
 
 type JSONObject = {
   [key in string]?: JSONValue
