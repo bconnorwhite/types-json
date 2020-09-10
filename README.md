@@ -33,6 +33,7 @@ npm install types-json
 ### Types
 ```ts
 import {
+  isJSONValue,
   isJSONObject,
   isJSONArray,
   isString,
@@ -44,6 +45,8 @@ import {
   JSONValue,
   JSONArray
 } from "types-json";
+
+function isJSONValue(object?: JSONValue): boolean;
 
 function isJSONObject(object?: JSONValue): boolean;
 

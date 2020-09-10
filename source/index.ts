@@ -7,6 +7,10 @@ export type JSONValue = string | number | boolean | null | JSONObject | JSONArra
 
 export interface JSONArray extends Array<JSONValue> {};
 
+export function isJSONValue(value?: JSONValue): value is JSONValue {
+  return value !== undefined;
+}
+
 export function isJSONObject(value?: JSONValue): value is JSONObject {
   return typeof value === "object" && !isJSONArray(value) && !isNull(value);
 }
