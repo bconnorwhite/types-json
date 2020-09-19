@@ -89,3 +89,4 @@ interface JSONArray extends Array<JSONValue> {};
 
 - [types-pkg-json](https://www.npmjs.com/package/types-pkg-json): Type checking for package.json
 - [types-tsconfig](https://www.npmjs.com/package/types-tsconfig): Type checking for tsconfig.json
+- [types-eslintrc](https://www.npmjs.com/package/types-eslintrc): Type checking for .eslintrc.json
