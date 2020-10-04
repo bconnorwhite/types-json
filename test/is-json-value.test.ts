@@ -1,4 +1,5 @@
-const { isJSONValue } = require('../build');
+import { test, expect } from "@jest/globals";
+import { isJSONValue } from "../source";
 
 test("isJSONValue string", () => {
   expect(isJSONValue("string")).toBe(true);
@@ -17,7 +18,7 @@ test("isJSONValue object", () => {
 });
 
 test("isJSONValue array", () => {
-  expect(isJSONValue([1,2,3])).toBe(true);
+  expect(isJSONValue([1, 2, 3])).toBe(true);
 });
 
 test("isJSONValue null", () => {

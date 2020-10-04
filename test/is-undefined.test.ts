@@ -1,4 +1,5 @@
-const { isUndefined } = require('../build');
+import { test, expect } from "@jest/globals";
+import { isUndefined } from "../source";
 
 test("isUndefined string", () => {
   expect(isUndefined("string")).toBe(false);
@@ -17,7 +18,7 @@ test("isUndefined object", () => {
 });
 
 test("isUndefined array", () => {
-  expect(isUndefined([1,2,3])).toBe(false);
+  expect(isUndefined([1, 2, 3])).toBe(false);
 });
 
 test("isUndefined null", () => {

@@ -5,7 +5,7 @@ export type JSONObject = {
 
 export type JSONValue = string | number | boolean | null | JSONObject | JSONArray;
 
-export interface JSONArray extends Array<JSONValue> {};
+export interface JSONArray extends Array<JSONValue> {}
 
 export function isJSONValue(value?: JSONValue): value is JSONValue {
   return value !== undefined;

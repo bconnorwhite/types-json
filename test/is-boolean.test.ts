@@ -1,4 +1,5 @@
-const { isBoolean } = require('../build');
+import { test, expect } from "@jest/globals";
+import { isBoolean } from "../source";
 
 test("isBoolean string", () => {
   expect(isBoolean("string")).toBe(false);
@@ -17,7 +18,7 @@ test("isBoolean object", () => {
 });
 
 test("isBoolean array", () => {
-  expect(isBoolean([1,2,3])).toBe(false);
+  expect(isBoolean([1, 2, 3])).toBe(false);
 });
 
 test("isBoolean null", () => {

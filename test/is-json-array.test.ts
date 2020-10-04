@@ -1,4 +1,5 @@
-const { isJSONArray } = require('../build');
+import { test, expect } from "@jest/globals";
+import { isJSONArray } from "../source";
 
 test("isJSONArray string", () => {
   expect(isJSONArray("string")).toBe(false);
@@ -17,7 +18,7 @@ test("isJSONArray object", () => {
 });
 
 test("isJSONArray array", () => {
-  expect(isJSONArray([1,2,3])).toBe(true);
+  expect(isJSONArray([1, 2, 3])).toBe(true);
 });
 
 test("isJSONArray null", () => {

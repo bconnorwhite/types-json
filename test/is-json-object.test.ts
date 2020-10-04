@@ -1,4 +1,5 @@
-const { isJSONObject } = require('../build');
+import { test, expect } from "@jest/globals";
+import { isJSONObject } from "../source";
 
 test("isJSONObject string", () => {
   expect(isJSONObject("string")).toBe(false);
@@ -17,7 +18,7 @@ test("isJSONObject object", () => {
 });
 
 test("isJSONObject array", () => {
-  expect(isJSONObject([1,2,3])).toBe(false);
+  expect(isJSONObject([1, 2, 3])).toBe(false);
 });
 
 test("isJSONObject null", () => {

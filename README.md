@@ -1,30 +1,35 @@
 <div align="center">
   <h1>types-json</h1>
   <a href="https://npmjs.com/package/types-json">
-    <img alt="npm" src="https://img.shields.io/npm/v/types-json.svg">
+    <img alt="NPM" src="https://img.shields.io/npm/v/types-json.svg">
   </a>
   <a href="https://github.com/bconnorwhite/types-json">
-    <img alt="typescript" src="https://img.shields.io/github/languages/top/bconnorwhite/types-json.svg">
+    <img alt="TypeScript" src="https://img.shields.io/github/languages/top/bconnorwhite/types-json.svg">
+  </a>
+  <a href='https://coveralls.io/github/bconnorwhite/types-json?branch=master'>
+    <img alt="Coverage Status" src="https://img.shields.io/coveralls/github/bconnorwhite/types-json.svg?branch=master">
   </a>
   <a href="https://github.com/bconnorwhite/types-json">
-    <img alt="GitHub stars" src="https://img.shields.io/github/stars/bconnorwhite/types-json?label=Stars%20Appreciated%21&style=social">
+    <img alt="GitHub Stars" src="https://img.shields.io/github/stars/bconnorwhite/types-json?label=Stars%20Appreciated%21&style=social">
   </a>
   <a href="https://twitter.com/bconnorwhite">
     <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/bconnorwhite.svg?label=%40bconnorwhite&style=social">
   </a>
 </div>
 
-> Type checking for json objects
+<br />
+
+> Type checking for JSON objects.
 
 Derived from [type-fest](https://www.npmjs.com/package/type-fest) with a focus on JSON types.
 
 ## Installation
 
-```bash
+```sh
 yarn add types-json
 ```
 
-```bash
+```sh
 npm install types-json
 ```
 
@@ -81,7 +86,7 @@ interface JSONArray extends Array<JSONValue> {};
 
 <h2>License <img align="right" alt="license" src="https://img.shields.io/npm/l/types-json.svg"></h2>
 
-[MIT](https://mit-license.org/)
+[MIT](https://opensource.org/licenses/MIT)
 
 <br />
 

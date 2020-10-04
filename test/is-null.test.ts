@@ -1,4 +1,5 @@
-const { isNull } = require('../build');
+import { test, expect } from "@jest/globals";
+import { isNull } from "../source";
 
 test("isNull string", () => {
   expect(isNull("string")).toBe(false);
@@ -17,7 +18,7 @@ test("isNull object", () => {
 });
 
 test("isNull array", () => {
-  expect(isNull([1,2,3])).toBe(false);
+  expect(isNull([1, 2, 3])).toBe(false);
 });
 
 test("isNull null", () => {
