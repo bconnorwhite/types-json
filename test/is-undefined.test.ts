@@ -1,5 +1,5 @@
 import { test, expect } from "@jest/globals";
-import { isUndefined } from "../source";
+import { isUndefined } from "../source/index.js";
 
 test("isUndefined string", () => {
   expect(isUndefined("string")).toBe(false);

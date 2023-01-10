@@ -1,5 +1,5 @@
 import { test, expect } from "@jest/globals";
-import { isNumber } from "../source";
+import { isNumber } from "../source/index.js";
 
 test("isNumber string", () => {
   expect(isNumber("string")).toBe(false);

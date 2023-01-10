@@ -3,16 +3,17 @@
   "version": "1.2.2",
   "description": "Type checking for JSON objects",
   "license": "MIT",
-  "author": {
-    "name": "Connor White",
-    "email": "connor.bcw@gmail.com",
-    "url": "https://connorwhite.org"
-  },
+  "private": false,
+  "author": "Connor White",
+  "contributors": [
+    "Connor White"
+  ],
   "homepage": "https://connorwhite.org/github/types-json",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bconnorwhite/types-json.git"
   },
+  "bugs": "https://github.com/bconnorwhite/types-json/issues",
   "keywords": [
     "json",
     "object",
@@ -25,29 +26,35 @@
     "guard",
     "guards"
   ],
+  "type": "module",
+  "main": ".auto/build/index.js",
+  "exports": "./.auto/build/index.js",
+  "types": ".auto/build/index.d.ts",
   "files": [
-    "build"
+    ".auto/build/**/!(tsconfig.tsbuildinfo)"
   ],
-  "main": "./build/index.js",
+  "engines": {
+    "node": "^14.13.1 || >=16.0.0"
+  },
   "scripts": {
-    "build": "bob build",
-    "commit": "bob commit",
-    "lint": "bob lint",
-    "release": "bob publish",
-    "test": "bob test"
+    "build": "auto build",
+    "dev": "auto dev",
+    "lint": "auto lint",
+    "prepack": "yarn build",
+    "release": "auto release",
+    "test": "auto test",
+    "typecheck": "auto typecheck"
   },
   "devDependencies": {
-    "@bconnorwhite/bob": "^2.9.2"
+    "autorepo": "^0.1.9"
   },
   "eslintConfig": {
-    "extends": "eslint-config-bob"
+    "extends": "@autosoft/eslint-config"
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "bob lint commit"
-    }
+  "jest": {
+    "preset": "@autosoft/jest-preset"
   },
   "npmpackagejsonlint": {
-    "extends": "npm-package-json-lint-config-bob"
+    "extends": "npm-package-json-lint-config-auto"
   }
 }
