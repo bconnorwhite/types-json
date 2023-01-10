@@ -1,3 +1,7 @@
+# [2.0.0](https://github.com/bconnorwhite/types-json/compare/v1.2.2...v2.0.0) (2023-01-10)
+
+
+
 ## [1.2.2](https://github.com/bconnorwhite/types-json/compare/v1.2.1...v1.2.2) (2020-10-04)
 
 
