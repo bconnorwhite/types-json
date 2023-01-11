@@ -1,6 +1,6 @@
 {
   "name": "types-json",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Type checking for JSON objects",
   "license": "MIT",
   "private": false,
