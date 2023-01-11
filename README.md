@@ -31,6 +31,10 @@ _DM me on [Twitter](https://twitter.com/bconnorwhite) if you have questions or s
 ---
 <!--END HEADER-->
 
+This package is specifically for when you have a value that you know is valid JSON - ex: the result of `JSON.parse`.
+
+It includes type guards for each of the JSON types, as well as matching types.
+
 ## Installation
 
 ```sh
