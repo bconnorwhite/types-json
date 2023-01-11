@@ -7,14 +7,14 @@
   <a href="https://github.com/bconnorwhite/types-json">
     <img alt="TypeScript" src="https://img.shields.io/github/languages/top/bconnorwhite/types-json.svg">
   </a>
-  <a href="https://coveralls.io/github/bconnorwhite/types-json?branch=master">
-    <img alt="Coverage Status" src="https://img.shields.io/coveralls/github/bconnorwhite/types-json.svg?branch=master">
+  <a href="https://coveralls.io/github/bconnorwhite/types-json?branch=main">
+    <img alt="Coverage Status" src="https://img.shields.io/coveralls/github/bconnorwhite/types-json.svg?branch=main">
   </a>
 </div>
 
 <br />
 
-<blockquote align="center">Types and type guards for JSON values.</blockquote>
+<blockquote align="center">Type checking for JSON values.</blockquote>
 
 <br />
 
@@ -30,10 +30,23 @@ _DM me on [Twitter](https://twitter.com/bconnorwhite) if you have questions or s
 
 ---
 <!--END HEADER-->
+This package uses [zod](https://www.npmjs.com/package/zod) to type check JSON values.
 
-This package is specifically for when you have a value that you know is valid JSON - ex: the result of `JSON.parse`.
+It includes type guards for each of the JSON types, as well as parse functions and corresponding types.
 
-It includes type guards for each of the JSON types, as well as matching types.
+## Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+  - [JSONValue](#jsonvalue)
+    - [Types](#types)
+  - [JSONObject](#jsonobject)
+  - [JSONArray](#jsonarray)
+  - [String](#string)
+  - [Number](#number)
+  - [Boolean](#boolean)
+  - [Null](#null)
+  - [Undefined](#undefined)
 
 ## Installation
 
@@ -51,36 +64,31 @@ pnpm add types-json
 
 ## Usage
 
-```ts
-import {
-  isJSONValue,
-  isJSONObject,
-  isJSONArray,
-  isString,
-  isNumber,
-  isBoolean,
-  isNull,
-  isUndefined
-} from "types-json";
+### JSONValue
 
-isJSONObject({}); // true
-isJSONArray([]); // true
-isString("foo"); // true
-isNumber(1); // true
-isBoolean(true); // true
-isNull(null); // true
-isUndefined(undefined); // true
+When using `isJSONValue`, values which cannot be parsed or serialized properly using `JSON.parse` and `JSON.stringify` return false.
+
+Similarly, when using `parseJSONValue`, invalid values return `undefined`.
+
+Finally, a zod schema provided representing the `JSONValue` type.
+
+```ts
+import { isJSONValue, parseJSONValue, jsonValueSchema } from "types-json";
 
 isJSONValue(undefined); // false
+isJSONValue(null); // true
+isJSONValue(NaN); // false
+isJSONValue(Infinity); // false
+isJSONValue([1, 2, 3]); // true
+isJSONValue([1, 2, () => 3]); // false
 ```
 
-### Types
+#### Types
+
+Here are the full types:
+
 ```ts
-import {
-  JSONObject,
-  JSONValue,
-  JSONArray
-} from "types-json";
+import { JSONObject, JSONValue, JSONArray } from "types-json";
 
 type JSONObject = {
   [key in string]?: JSONValue
@@ -91,11 +99,118 @@ type JSONValue = string | number | boolean | null | JSONObject | JSONArray;
 interface JSONArray extends Array<JSONValue> {};
 ```
 
+### JSONObject
+
+```ts
+import {
+  isJSONObject,
+  parseJSONObject,
+  jsonObjectSchema
+} from "types-json";
+
+isJSONObject({ foo: "bar" }); // true
+isJSONObject({ foo: () => "bar" }); // false
+parseJSONObject({ foo: "bar" }); // true
+parseJSONObject({ foo: () => "bar" }); // undefined
+```
+
+### JSONArray
+
+```ts
+import {
+  isJSONArray,
+  parseJSONArray,
+  jsonArraySchema,
+} from "types-json";
+
+isJSONArray([1]); // true
+isJSONArray([1, () => 2]); // false
+parseJSONArray([1]); // []
+parseJSONArray([1, () => 2]); // undefined
+```
+
+### String
+
+```ts
+import {
+  isString,
+  parseString,
+  stringSchema
+} from "types-json";
+
+isString("foo"); // true
+isString(1); // undefined
+parseString("foo"); // "foo"
+parseString(1); // undefined
+```
+
+### Number
+
+```ts
+import {
+  isNumber,
+  parseNumber,
+  numberSchema
+} from "types-json";
+
+isNumber(1); // true
+isNumber("1"); // undefined
+parseNumber(1); // true
+parseNumber("1"); // undefined
+```
+
+### Boolean
+
+```ts
+import {
+  isBoolean,
+  parseBoolean,
+  booleanSchema
+} from "types-json";
+
+isBoolean(true); // true
+isBoolean("true"); // undefined
+parseBoolean(true); // true
+parseBoolean("true"); // undefined
+```
+
+### Null
+
+```ts
+import {
+  isNull,
+  parseNull,
+  nullSchema
+};
+
+isNull(null); // true
+isNull("not null"); // undefined
+parseNull(null); // null
+parseNull("not null"); // undefined
+```
+
+### Undefined
+
+Finally, an `isUndefined` type guard is provided:
+
+```ts
+import { isUndefined } from "types-json";
+
+isUndefined(undefined); // true
+isUndefined("string"); // false
+```
+
 <!--BEGIN FOOTER-->
 
 <br />
 
-<h2>Dev Dependencies</h2>
+<h2 id="dependencies">Dependencies<a href="https://www.npmjs.com/package/types-json?activeTab=dependencies"><img align="right" alt="dependencies" src="https://img.shields.io/librariesio/release/npm/types-json.svg"></a></h2>
+
+- [zod](https://www.npmjs.com/package/zod): TypeScript-first schema declaration and validation library with static type inference
+
+<br />
+
+<h3>Dev Dependencies</h3>
 
 - [autorepo](https://www.npmjs.com/package/autorepo): Autorepo abstracts away your dev dependencies, providing a single command to run all of your scripts.
 
@@ -103,8 +218,10 @@ interface JSONArray extends Array<JSONValue> {};
 
 <h2 id="license">License <a href="https://opensource.org/licenses/MIT"><img align="right" alt="license" src="https://img.shields.io/npm/l/types-json.svg"></a></h2>
 
-[MIT](https://opensource.org/licenses/MIT)
+[MIT](https://opensource.org/licenses/MIT) - _MIT License_
 <!--END FOOTER-->
+
+<br />
 
 ## Related Packages
 

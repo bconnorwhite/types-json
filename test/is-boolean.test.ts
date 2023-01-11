@@ -1,5 +1,5 @@
 import { test, expect } from "@jest/globals";
-import { isBoolean } from "../source/index.js";
+import { isBoolean, parseBoolean } from "../source/index.js";
 
 test("isBoolean string", () => {
   expect(isBoolean("string")).toBe(false);
@@ -27,4 +27,12 @@ test("isBoolean null", () => {
 
 test("isBoolean undefined", () => {
   expect(isBoolean(undefined)).toBe(false);
+});
+
+test("parseBoolean", () => {
+  expect(parseBoolean(true)).toBe(true);
+});
+
+test("parseBoolean", () => {
+  expect(parseBoolean("false")).toBe(undefined);
 });

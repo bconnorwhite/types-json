@@ -1,7 +1,7 @@
 {
   "name": "types-json",
   "version": "2.0.2",
-  "description": "Type checking for JSON objects",
+  "description": "Type checking for JSON values",
   "license": "MIT",
   "private": false,
   "author": "Connor White",
@@ -56,5 +56,8 @@
   },
   "npmpackagejsonlint": {
     "extends": "npm-package-json-lint-config-auto"
+  },
+  "dependencies": {
+    "zod": "^3.20.2"
   }
 }

@@ -1,5 +1,5 @@
 import { test, expect } from "@jest/globals";
-import { isNumber } from "../source/index.js";
+import { isNumber, parseNumber } from "../source/index.js";
 
 test("isNumber string", () => {
   expect(isNumber("string")).toBe(false);
@@ -27,4 +27,28 @@ test("isNumber null", () => {
 
 test("isNumber undefined", () => {
   expect(isNumber(undefined)).toBe(false);
+});
+
+test("isNumber NaN", () => {
+  expect(isNumber(NaN)).toBe(false);
+});
+
+test("isNumber Infinity", () => {
+  expect(isNumber(Infinity)).toBe(false);
+});
+
+test("parseNumber", () => {
+  expect(parseNumber(10)).toBe(10);
+});
+
+test("parseNumber", () => {
+  expect(parseNumber("false")).toBe(undefined);
+});
+
+test("parseNumber", () => {
+  expect(parseNumber(NaN)).toBe(undefined);
+});
+
+test("parseNumber", () => {
+  expect(parseNumber(Infinity)).toBe(undefined);
 });

@@ -1,5 +1,5 @@
 import { test, expect } from "@jest/globals";
-import { isString } from "../source/index.js";
+import { isString, parseString } from "../source/index.js";
 
 test("isString string", () => {
   expect(isString("string")).toBe(true);
@@ -27,4 +27,12 @@ test("isString null", () => {
 
 test("isString undefined", () => {
   expect(isString(undefined)).toBe(false);
+});
+
+test("parseString", () => {
+  expect(parseString("string")).toBe("string");
+});
+
+test("parseString", () => {
+  expect(parseString(false)).toBe(undefined);
 });
