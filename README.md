@@ -66,6 +66,7 @@ isNumber(1); // true
 isBoolean(true); // true
 isNull(null); // true
 isUndefined(undefined); // true
+
 isJSONValue(undefined); // false
 ```
 
