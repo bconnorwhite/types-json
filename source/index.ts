@@ -6,7 +6,7 @@ import { Optional } from "./optional.js";
 // Value
 
 export type JSONValue = JSONPrimitive | JSONObject | JSONArray;
-export type NestedOptionalJSONValue = JSONPrimitive | OptionalJSONObject | NestedOptionalJSONArray;
+export type NestedOptionalJSONValue = JSONPrimitive | NestedOptionalJSONObject | NestedOptionalJSONArray;
 export type OptionalJSONValue = OptionalJSONPrimitive | OptionalJSONObject | OptionalJSONArray;
 
 export const jsonValueSchema: z.ZodType<JSONValue> = z.union([
