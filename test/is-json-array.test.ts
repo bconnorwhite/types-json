@@ -1,5 +1,5 @@
 import { test, expect } from "@jest/globals";
-import { isJSONArray, parseJSONArray } from "../source/index.js";
+import { isJSONArray, isOptionalJSONArray, parseJSONArray } from "../source/index.js";
 
 test("isJSONArray string", () => {
   expect(isJSONArray("string")).toBe(false);
@@ -19,6 +19,11 @@ test("isJSONArray object", () => {
 
 test("isJSONArray array", () => {
   expect(isJSONArray([1, 2, 3])).toBe(true);
+});
+
+test("isOptionalJSONArray array", () => {
+  expect(isOptionalJSONArray([1, undefined, 3])).toBe(false);
+  expect(isOptionalJSONArray([1, { a: 1, b: undefined }, 3])).toBe(true);
 });
 
 test("isJSONArray null", () => {
