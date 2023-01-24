@@ -1,3 +1,12 @@
+# [3.1.0](https://github.com/bconnorwhite/types-json/compare/v3.0.0...v3.1.0) (2023-01-24)
+
+
+### Features
+
+* add optional and primitive types ([ee5844e](https://github.com/bconnorwhite/types-json/commit/ee5844edae87997fbf20ec19342ec14a73e383bb))
+
+
+
 # [3.0.0](https://github.com/bconnorwhite/types-json/compare/v2.0.2...v3.0.0) (2023-01-11)
 
 
