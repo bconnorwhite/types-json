@@ -1,3 +1,12 @@
+## [3.1.2](https://github.com/bconnorwhite/types-json/compare/v3.1.1...v3.1.2) (2023-01-24)
+
+
+### Bug Fixes
+
+* fix NestedOptionalJSONValue type ([4728284](https://github.com/bconnorwhite/types-json/commit/4728284f8a8e42aec3e70acb1cafdf602b3e0382))
+
+
+
 ## [3.1.1](https://github.com/bconnorwhite/types-json/compare/v3.1.0...v3.1.1) (2023-01-24)
 
 
