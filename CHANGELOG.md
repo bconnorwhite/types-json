@@ -1,3 +1,12 @@
+## [3.1.1](https://github.com/bconnorwhite/types-json/compare/v3.1.0...v3.1.1) (2023-01-24)
+
+
+### Bug Fixes
+
+* adjust nested optional types ([e61c1ed](https://github.com/bconnorwhite/types-json/commit/e61c1ed47972c8a02be955f87517b5b1266acfe6))
+
+
+
 # [3.1.0](https://github.com/bconnorwhite/types-json/compare/v3.0.0...v3.1.0) (2023-01-24)
 
 
