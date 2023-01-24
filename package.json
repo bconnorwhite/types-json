@@ -45,6 +45,9 @@
     "test": "auto test",
     "typecheck": "auto typecheck"
   },
+  "dependencies": {
+    "zod": "^3.20.2"
+  },
   "devDependencies": {
     "autorepo": "^0.1.9"
   },
@@ -56,8 +59,5 @@
   },
   "npmpackagejsonlint": {
     "extends": "npm-package-json-lint-config-auto"
-  },
-  "dependencies": {
-    "zod": "^3.20.2"
   }
 }
