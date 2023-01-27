@@ -39,9 +39,10 @@ It includes type guards for each of the JSON types, as well as parse functions a
 - [Installation](#installation)
 - [Usage](#usage)
   - [JSONValue](#jsonvalue)
-    - [Types](#types)
   - [JSONObject](#jsonobject)
   - [JSONArray](#jsonarray)
+  - [JSONPrimitive](#jsonprimitive)
+  - [JSONMagnitudinous](#jsonmagnitudinous)
   - [String](#string)
   - [Number](#number)
   - [Boolean](#boolean)
@@ -83,23 +84,18 @@ isJSONValue([1, 2, 3]); // true
 isJSONValue([1, 2, () => 3]); // false
 ```
 
-#### Types
-
-Here are the full types:
+Optional types are also provided:
 
 ```ts
-import { JSONObject, JSONValue, JSONArray } from "types-json";
+import { isOptionalJSONValue, parseOptionalJSONValue, optionalJSONValueSchema } from "types-json";
 
-type JSONObject = {
-  [key in string]?: JSONValue
-};
-
-type JSONValue = string | number | boolean | null | JSONObject | JSONArray;
-
-interface JSONArray extends Array<JSONValue> {};
+isOptionalJSONValue(undefined); // true
+isOptionalJSONValue({ a: 1, b: undefined }); // true
 ```
 
 ### JSONObject
+
+JSONObject is a type guard and parse function for objects which can be parsed and serialized using `JSON.parse` and `JSON.stringify`.
 
 ```ts
 import {
@@ -112,6 +108,25 @@ isJSONObject({ foo: "bar" }); // true
 isJSONObject({ foo: () => "bar" }); // false
 parseJSONObject({ foo: "bar" }); // true
 parseJSONObject({ foo: () => "bar" }); // undefined
+```
+
+Optional types are also provided. `OptionalJSONObject` includes `undefined`, while `NestedOptionalJSONObject` only allows for `undefined` values nested within the object:
+
+```ts
+import {
+  isOptionalJSONObject,
+  parseOptionalJSONObject,
+  optionalJSONObjectSchema,
+  isNestedOptionalJSONObject,
+  parseNestedOptionalJSONObject,
+  nestedOptionalJSONObjectSchema
+} from "types-json";
+
+isOptionalJSONObject(undefined); // true
+isOptionalJSONObject({ a: 1, b: undefined }); // true
+
+isNestedOptionalJSONObject(undefined); // false
+isNestedOptionalJSONObject({ a: 1, b: undefined }); // true
 ```
 
 ### JSONArray
@@ -129,6 +144,97 @@ parseJSONArray([1]); // []
 parseJSONArray([1, () => 2]); // undefined
 ```
 
+Optional types are also provided. `OptionalJSONArray` includes `undefined`, while `NestedOptionalJSONArray` only allows for `undefined` values nested within objects inside the array. Note that `undefined` values nested within arrays are not allowed, as they are not valid JSON:
+
+```ts
+import {
+  isOptionalJSONArray,
+  parseOptionalJSONArray,
+  optionalJSONArraySchema,
+  isNestedOptionalJSONArray,
+  parseNestedOptionalJSONArray,
+  nestedOptionalJSONArraySchema
+} from "types-json";
+
+isOptionalJSONArray(undefined); // true
+isOptionalJSONArray([1, undefined]); // false
+isOptionalJSONArray([1, { a: 1, b: undefined }]); // true
+
+isNestedOptionalJSONArray(undefined); // false
+isNestedOptionalJSONArray([1, undefined]); // false
+isNestedOptionalJSONArray([1, { a: 1, b: undefined }]); // true
+```
+
+### JSONPrimitive
+
+```ts
+import {
+  isJSONPrimitive,
+  parseJSONPrimitive,
+  jsonPrimitiveSchema
+} from "types-json";
+
+isJSONPrimitive("foo"); // true
+isJSONPrimitive(1); // true
+isJSONPrimitive(true); // true
+isJSONPrimitive(null); // true
+isJSONPrimitive(undefined); // false
+isJSONPrimitive({}); // false
+```
+
+Optional types are also provided:
+
+```ts
+import {
+  isOptionalJSONPrimitive,
+  optionalJSONPrimitiveSchema
+} from "types-json";
+
+isOptionalJSONPrimitive("foo"); // true
+isOptionalJSONPrimitive(1); // true
+isOptionalJSONPrimitive(true); // true
+isOptionalJSONPrimitive(null); // true
+isOptionalJSONPrimitive(undefined); // true
+isOptionalJSONPrimitive({}); // false
+```
+
+### JSONMagnitudinous
+
+`JSONMagnitudinous` is a type for values which can be reasonably compared using operators such as `>`, `<`, `>=`, and `<=`:
+
+```ts
+import {
+  isJSONMagnitudinous,
+  parseJSONMagnitudinous,
+  jsonMagnitudinousSchema
+} from "types-json";
+
+isJSONMagnitudinous("foo"); // true
+isJSONMagnitudinous(1); // true
+isJSONMagnitudinous(true); // false
+isJSONMagnitudinous(null); // false
+isJSONMagnitudinous(undefined); // false
+isJSONMagnitudinous({}); // false
+isJSONMagnitudinous([]); // false
+```
+
+Optional types are also provided:
+
+```ts
+import {
+  isOptionalJSONMagnitudinous,
+  optionalJSONMagnitudinousSchema
+} from "types-json";
+
+isOptionalJSONMagnitudinous("foo"); // true
+isOptionalJSONMagnitudinous(1); // true
+isOptionalJSONMagnitudinous(true); // false
+isOptionalJSONMagnitudinous(null); // false
+isOptionalJSONMagnitudinous(undefined); // true
+isOptionalJSONMagnitudinous({}); // false
+isOptionalJSONMagnitudinous([]); // false
+```
+
 ### String
 
 ```ts
@@ -142,6 +248,18 @@ isString("foo"); // true
 isString(1); // undefined
 parseString("foo"); // "foo"
 parseString(1); // undefined
+```
+
+Optional types are also provided:
+
+```ts
+import {
+  isOptionalString,
+  optionalStringSchema
+} from "types-json";
+
+isOptionalString("foo"); // true
+isOptionalString(undefined); // true
 ```
 
 ### Number
@@ -159,6 +277,18 @@ parseNumber(1); // true
 parseNumber("1"); // undefined
 ```
 
+Optional types are also provided:
+
+```ts
+import {
+  isOptionalNumber,
+  optionalNumberSchema
+} from "types-json";
+
+isOptionalNumber(1); // true
+isOptionalNumber(undefined); // true
+```
+
 ### Boolean
 
 ```ts
@@ -174,6 +304,18 @@ parseBoolean(true); // true
 parseBoolean("true"); // undefined
 ```
 
+Optional types are also provided:
+
+```ts
+import {
+  isOptionalBoolean,
+  optionalBooleanSchema
+} from "types-json";
+
+isOptionalBoolean(true); // true
+isOptionalBoolean(undefined); // true
+```
+
 ### Null
 
 ```ts
@@ -187,6 +329,18 @@ isNull(null); // true
 isNull("not null"); // undefined
 parseNull(null); // null
 parseNull("not null"); // undefined
+```
+
+Optional types are also provided:
+
+```ts
+import {
+  isOptionalNull,
+  optionalNullSchema
+} from "types-json";
+
+isOptionalNull(null); // true
+isOptionalNull(undefined); // true
 ```
 
 ### Undefined
