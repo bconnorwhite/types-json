@@ -42,7 +42,7 @@ It includes type guards for each of the JSON types, as well as parse functions a
   - [JSONObject](#jsonobject)
   - [JSONArray](#jsonarray)
   - [JSONPrimitive](#jsonprimitive)
-  - [JSONMagnitudinous](#jsonmagnitudinous)
+  - [JSONOrderable](#jsonorderable)
   - [String](#string)
   - [Number](#number)
   - [Boolean](#boolean)
@@ -198,41 +198,41 @@ isOptionalJSONPrimitive(undefined); // true
 isOptionalJSONPrimitive({}); // false
 ```
 
-### JSONMagnitudinous
+### JSONOrderable
 
-`JSONMagnitudinous` is a type for values which can be reasonably compared using operators such as `>`, `<`, `>=`, and `<=`:
+`JSONOrderable` is a type for values which can be reasonably compared using operators such as `>`, `<`, `>=`, and `<=`:
 
 ```ts
 import {
-  isJSONMagnitudinous,
-  parseJSONMagnitudinous,
-  jsonMagnitudinousSchema
+  isJSONOrderable,
+  parseJSONOrderable,
+  jsonOrderableSchema
 } from "types-json";
 
-isJSONMagnitudinous("foo"); // true
-isJSONMagnitudinous(1); // true
-isJSONMagnitudinous(true); // false
-isJSONMagnitudinous(null); // false
-isJSONMagnitudinous(undefined); // false
-isJSONMagnitudinous({}); // false
-isJSONMagnitudinous([]); // false
+isJSONOrderable("foo"); // true
+isJSONOrderable(1); // true
+isJSONOrderable(true); // false
+isJSONOrderable(null); // false
+isJSONOrderable(undefined); // false
+isJSONOrderable({}); // false
+isJSONOrderable([]); // false
 ```
 
 Optional types are also provided:
 
 ```ts
 import {
-  isOptionalJSONMagnitudinous,
-  optionalJSONMagnitudinousSchema
+  isOptionalJSONOrderable,
+  optionalJSONOrderableSchema
 } from "types-json";
 
-isOptionalJSONMagnitudinous("foo"); // true
-isOptionalJSONMagnitudinous(1); // true
-isOptionalJSONMagnitudinous(true); // false
-isOptionalJSONMagnitudinous(null); // false
-isOptionalJSONMagnitudinous(undefined); // true
-isOptionalJSONMagnitudinous({}); // false
-isOptionalJSONMagnitudinous([]); // false
+isOptionalJSONOrderable("foo"); // true
+isOptionalJSONOrderable(1); // true
+isOptionalJSONOrderable(true); // false
+isOptionalJSONOrderable(null); // false
+isOptionalJSONOrderable(undefined); // true
+isOptionalJSONOrderable({}); // false
+isOptionalJSONOrderable([]); // false
 ```
 
 ### String

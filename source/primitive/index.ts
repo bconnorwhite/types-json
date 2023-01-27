@@ -24,21 +24,21 @@ export const isOptionalJSONPrimitive = is(optionalJsonPrimitiveSchema);
 
 export const parseJSONPrimitive = parse(jsonPrimitiveSchema);
 
-// JSONMagnitudinous
+// JSONOrderable
 
-export type JSONMagnitudinous = string | number;
-export type OptionalJSONMagnitudinous = Optional<JSONMagnitudinous>;
+export type JSONOrderable = string | number;
+export type OptionalJSONOrderable = Optional<JSONOrderable>;
 
-export const jsonMagnitudinousSchema: z.ZodSchema<JSONMagnitudinous> = z.union([
+export const jsonOrderableSchema: z.ZodSchema<JSONOrderable> = z.union([
   stringSchema,
   numberSchema
 ]);
-export const optionalJsonMagnitudinousSchema: z.ZodSchema<OptionalJSONMagnitudinous> = jsonMagnitudinousSchema.optional();
+export const optionalJsonOrderableSchema: z.ZodSchema<OptionalJSONOrderable> = jsonOrderableSchema.optional();
 
-export const isJSONMagnitudinous = is(jsonMagnitudinousSchema);
-export const isOptionalJSONMagnitudinous = is(optionalJsonMagnitudinousSchema);
+export const isJSONOrderable = is(jsonOrderableSchema);
+export const isOptionalJSONOrderable = is(optionalJsonOrderableSchema);
 
-export const parseJSONMagnitudinous = parse(jsonMagnitudinousSchema);
+export const parseJSONOrderable = parse(jsonOrderableSchema);
 
 export * from "./string.js";
 export * from "./number.js";
