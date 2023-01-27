@@ -1,3 +1,12 @@
+# [3.2.0](https://github.com/bconnorwhite/types-json/compare/v3.1.2...v3.2.0) (2023-01-27)
+
+
+### Features
+
+* add JSONMagnitudinous ([3227e8b](https://github.com/bconnorwhite/types-json/commit/3227e8b99210006f108f080f22a78dcce76fe6a7))
+
+
+
 ## [3.1.2](https://github.com/bconnorwhite/types-json/compare/v3.1.1...v3.1.2) (2023-01-24)
 
 
