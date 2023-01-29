@@ -1,10 +1,7 @@
 import z from "zod";
+import { validate } from "is-zod";
 
-export function is<T>(schema: z.ZodSchema<T>) {
-  return (value?: unknown): value is T => {
-    return schema.safeParse(value).success;
-  };
-}
+export const is = validate;
 
 export function parse<T>(schema: z.ZodSchema<T>) {
   return (value?: unknown): T | undefined => {

@@ -360,6 +360,7 @@ isUndefined("string"); // false
 
 <h2 id="dependencies">Dependencies<a href="https://www.npmjs.com/package/types-json?activeTab=dependencies"><img align="right" alt="dependencies" src="https://img.shields.io/librariesio/release/npm/types-json.svg"></a></h2>
 
+- [is-zod](https://www.npmjs.com/package/is-zod): Typeguard to check if a value matches a zod schema
 - [zod](https://www.npmjs.com/package/zod): TypeScript-first schema declaration and validation library with static type inference
 
 <br />
