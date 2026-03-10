@@ -1,6 +1,6 @@
 import z from "zod";
 import { is, parse } from "../utils.js";
-import { Optional } from "../optional.js";
+import { type Optional } from "../optional.js";
 
 export type OptionalNull = Optional<null>;
 

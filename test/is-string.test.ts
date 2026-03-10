@@ -1,5 +1,5 @@
-import { test, expect } from "@jest/globals";
-import { isString, parseString } from "../source/index.js";
+import { expect, test } from "vitest";
+import { isString, parseString } from "../src/index.js";
 
 test("isString string", () => {
   expect(isString("string")).toBe(true);

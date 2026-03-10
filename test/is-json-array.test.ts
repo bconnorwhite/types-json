@@ -1,5 +1,5 @@
-import { test, expect } from "@jest/globals";
-import { isJSONArray, isOptionalJSONArray, parseJSONArray } from "../source/index.js";
+import { expect, test } from "vitest";
+import { isJSONArray, isOptionalJSONArray, parseJSONArray } from "../src/index.js";
 
 test("isJSONArray string", () => {
   expect(isJSONArray("string")).toBe(false);

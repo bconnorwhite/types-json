@@ -1,5 +1,5 @@
-import { test, expect } from "@jest/globals";
-import { isJSONObject, isOptionalJSONObject, parseJSONObject } from "../source/index.js";
+import { expect, test } from "vitest";
+import { isJSONObject, isOptionalJSONObject, parseJSONObject } from "../src/index.js";
 
 test("isJSONObject string", () => {
   expect(isJSONObject("string")).toBe(false);
@@ -45,5 +45,4 @@ test("parseJSONObject", () => {
 test("parseJSONObject", () => {
   expect(parseJSONObject({ a: true, b: () => 3 })).toBe(undefined);
 });
-
 

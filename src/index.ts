@@ -1,9 +1,7 @@
 import { z } from "zod";
 import { is, parse } from "./utils.js";
-import { jsonPrimitiveSchema, JSONPrimitive, OptionalJSONPrimitive, optionalJsonPrimitiveSchema } from "./primitive/index.js";
-import { Optional } from "./optional.js";
-
-// Value
+import { jsonPrimitiveSchema, type JSONPrimitive, type OptionalJSONPrimitive, optionalJsonPrimitiveSchema } from "./primitive/index.js";
+import { type Optional } from "./optional.js";
 
 export type JSONValue = JSONPrimitive | JSONObject | JSONArray;
 export type NestedOptionalJSONValue = JSONPrimitive | NestedOptionalJSONObject | NestedOptionalJSONArray;
@@ -33,11 +31,9 @@ export const parseJSONValue = parse(jsonValueSchema);
 export const parseNestedOptionalJSONValue = parse(nestedOptionalJSONValueSchema);
 export const parseOptionalJSONValue = parse(optionalJSONValueSchema);
 
-// Array
-
-export type JSONArray = Array<JSONValue>;
-export type NestedOptionalJSONArray = Array<NestedOptionalJSONValue>;
-export type OptionalJSONArray = Optional<Array<NestedOptionalJSONValue>>;
+export type JSONArray = JSONValue[];
+export type NestedOptionalJSONArray = NestedOptionalJSONValue[];
+export type OptionalJSONArray = Optional<NestedOptionalJSONValue[]>;
 
 export const jsonArraySchema = z.array(jsonValueSchema);
 export const nestedOptionalJSONArraySchema = z.array(nestedOptionalJSONValueSchema);
@@ -50,8 +46,6 @@ export const isOptionalJSONArray = is(optionalJSONArraySchema);
 export const parseJSONArray = parse(jsonArraySchema);
 export const parseNestedOptionalJSONArray = parse(nestedOptionalJSONArraySchema);
 export const parseOptionalJSONArray = parse(optionalJSONArraySchema);
-
-// Object
 
 export type JSONObject = {
   [key in string]: JSONValue;
@@ -72,8 +66,6 @@ export const isOptionalJSONObject = is(optionalJSONObjectSchema);
 export const parseJSONObject = parse(jsonObjectSchema);
 export const parseNestedOptionalJSONObject = parse(nestedOptionalJSONObjectSchema);
 export const parseOptionalJSONObject = parse(optionalJSONObjectSchema);
-
-// Exports
 
 export * from "./optional.js";
 export * from "./primitive/index.js";

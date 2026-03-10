@@ -7,32 +7,70 @@
   <a href="https://github.com/bconnorwhite/types-json">
     <img alt="TypeScript" src="https://img.shields.io/github/languages/top/bconnorwhite/types-json.svg">
   </a>
-  <a href="https://coveralls.io/github/bconnorwhite/types-json?branch=main">
-    <img alt="Coverage Status" src="https://img.shields.io/coveralls/github/bconnorwhite/types-json.svg?branch=main">
-  </a>
 </div>
 
 <br />
 
 <blockquote align="center">Type checking for JSON values.</blockquote>
 
-<br />
-
-_If I should maintain this repo, please ⭐️_
-<a href="https://github.com/bconnorwhite/types-json">
-  <img align="right" alt="GitHub stars" src="https://img.shields.io/github/stars/bconnorwhite/types-json?label=%E2%AD%90%EF%B8%8F&style=social">
-</a>
-
-_DM me on [Twitter](https://twitter.com/bconnorwhite) if you have questions or suggestions._
-<a href="https://twitter.com/bconnorwhite">
-  <img align="right" alt="Twitter" src="https://img.shields.io/twitter/url?label=%40bconnorwhite&style=social&url=https%3A%2F%2Ftwitter.com%2Fbconnorwhite">
-</a>
-
 ---
 <!--END HEADER-->
+
 This package uses [zod](https://www.npmjs.com/package/zod) to type check JSON values.
 
 It includes type guards for each of the JSON types, as well as parse functions and corresponding types.
+
+<!-- BEGIN INSTALLATION -->
+## Installation
+
+<details open>
+  <summary>
+    <a href="https://www.npmjs.com/package/types-json">
+      <img src="https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=white" alt="NPM" />
+    </a>
+  </summary>
+
+```sh
+npm install types-json
+```
+
+</details>
+
+<details>
+  <summary>
+    <a href="https://yarnpkg.com/package/types-json">
+      <img src="https://img.shields.io/badge/yarn-2C8EBB?logo=yarn&logoColor=white" alt="Yarn" />
+    </a>
+  </summary>
+
+```sh
+yarn add types-json
+```
+
+</details>
+
+<details>
+  <summary>
+    <img src="https://img.shields.io/badge/pnpm-F69220?logo=pnpm&logoColor=white" alt="PNPM" />
+  </summary>
+
+```sh
+pnpm add types-json
+```
+
+</details>
+
+<details>
+  <summary>
+    <img src="https://img.shields.io/badge/bun-EE81C3?logo=bun&logoColor=white" alt="Bun" />
+  </summary>
+
+```sh
+bun add types-json
+```
+
+</details>
+<!-- END INSTALLATION -->
 
 ## Contents
 
@@ -48,20 +86,6 @@ It includes type guards for each of the JSON types, as well as parse functions a
   - [Boolean](#boolean)
   - [Null](#null)
   - [Undefined](#undefined)
-
-## Installation
-
-```sh
-yarn add types-json
-```
-
-```sh
-npm install types-json
-```
-
-```sh
-pnpm add types-json
-```
 
 ## Usage
 
@@ -354,28 +378,6 @@ isUndefined(undefined); // true
 isUndefined("string"); // false
 ```
 
-<!--BEGIN FOOTER-->
-
-<br />
-
-<h2 id="dependencies">Dependencies<a href="https://www.npmjs.com/package/types-json?activeTab=dependencies"><img align="right" alt="dependencies" src="https://img.shields.io/librariesio/release/npm/types-json.svg"></a></h2>
-
-- [is-zod](https://www.npmjs.com/package/is-zod): Typeguard to check if a value matches a zod schema
-- [zod](https://www.npmjs.com/package/zod): TypeScript-first schema declaration and validation library with static type inference
-
-<br />
-
-<h3>Dev Dependencies</h3>
-
-- [autorepo](https://www.npmjs.com/package/autorepo): Autorepo abstracts away your dev dependencies, providing a single command to run all of your scripts.
-
-<br />
-
-<h2 id="license">License <a href="https://opensource.org/licenses/MIT"><img align="right" alt="license" src="https://img.shields.io/npm/l/types-json.svg"></a></h2>
-
-[MIT](https://opensource.org/licenses/MIT) - _MIT License_
-<!--END FOOTER-->
-
 <br />
 
 ## Related Packages
@@ -383,3 +385,14 @@ isUndefined("string"); // false
 - [types-pkg-json](https://www.npmjs.com/package/types-pkg-json): Type checking for package.json
 - [types-tsconfig](https://www.npmjs.com/package/types-tsconfig): Type checking for tsconfig.json
 - [types-eslintrc](https://www.npmjs.com/package/types-eslintrc): Type checking for .eslintrc.json
+
+<!--BEGIN FOOTER-->
+<h2 id="dependencies">Dependencies<a href="https://www.npmjs.com/package/types-json?activeTab=dependencies"><img align="right" alt="dependencies" src="https://img.shields.io/librariesio/release/npm/types-json.svg"></a></h2>
+
+- [is-zod](https://www.npmjs.com/package/is-zod): Typeguard to check if a value matches a zod schema
+- [zod](https://www.npmjs.com/package/zod): TypeScript-first schema declaration and validation library with static type inference
+
+<h2 id="license">License <a href="https://opensource.org/licenses/MIT"><img align="right" alt="license" src="https://img.shields.io/npm/l/types-json.svg"></a></h2>
+
+[MIT](https://opensource.org/licenses/MIT) - _MIT License_
+<!--END FOOTER-->

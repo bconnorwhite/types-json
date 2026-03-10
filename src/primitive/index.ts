@@ -1,12 +1,10 @@
 import { z } from "zod";
 import { is, parse } from "../utils.js";
-import { Optional } from "../optional.js";
+import { type Optional } from "../optional.js";
 import { stringSchema } from "./string.js";
 import { numberSchema } from "./number.js";
 import { booleanSchema } from "./boolean.js";
 import { nullSchema } from "./null.js";
-
-// JSONPrimitive
 
 export type JSONPrimitive = string | number | boolean | null;
 export type OptionalJSONPrimitive = Optional<JSONPrimitive>;
@@ -23,8 +21,6 @@ export const isJSONPrimitive = is(jsonPrimitiveSchema);
 export const isOptionalJSONPrimitive = is(optionalJsonPrimitiveSchema);
 
 export const parseJSONPrimitive = parse(jsonPrimitiveSchema);
-
-// JSONOrderable
 
 export type JSONOrderable = string | number;
 export type OptionalJSONOrderable = Optional<JSONOrderable>;
